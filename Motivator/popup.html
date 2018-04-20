@@ -1,11 +1,114 @@
+<!doctype html>
 
-<!DOCTYPE html>
 <html>
-<head>
-	<title>Pop up page!</title>
-<link rel="stylesheet" type="text/css" href="/styles.css">
-</head>
-<body>
-<h1 class="sample" style="color:grey">lets not waste anymore time in roaming around</h1>
-</body>
-</html>
+	<head>
+		<title>Notes</title>
+		<style type="text/css">
+			body {
+				width: 600px;
+				height: 400px;
+			}
+			#notes-list-container {
+				width: 150px;
+				height: 300px;
+			}
+			#notes-list {
+				list-style: none;
+				margin-left: 0;
+				width: 150px;
+				/*overflow: scroll*/;
+			}
+			#list-div {
+				height: 400px;
+    			overflow: scroll;
+			}
+			.note {
+				margin-left: -40px;
+			    padding-left: 7px;
+			    width: 150px;
+			    border-bottom: #f1f1f1 1px solid;
+			    cursor: pointer;
+			    /*background-color: #f5f;*/
+			}
+			.active {
+				background-color: #ffc502;
+			}
+			.active-alt {
+				background-color: #FFE89A;
+			}
+			#active-note {
+				margin-top: -300px;
+				margin-left: 150px;
+				width: 440px;
+				height: 430px;
+				background-color: #F8F8F6;
+				border-left: #f1f1f1 1px solid;
+			}
+			#search-notes {
+				width: 140px;
+			    height: 27px;
+			    margin-top: 10px;
+			    margin-left: 5px;
+			    margin-bottom: 10px;
+			}
+			.note-text {
+				font-weight: bold;
+			    white-space: nowrap;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			}
+			#edit-note {
+				width: 97%;
+				height: 258px;
+				resize: none;
+				background-color: transparent;
+				border: none;
+			    overflow: auto;
+			    outline: none;
+		        margin-left: 7px;
+
+			    -webkit-box-shadow: none;
+			    -moz-box-shadow: none;
+			    box-shadow: none;
+			}
+			#header {
+			    padding-top: 10px;
+			    padding-bottom: 10px;
+			    text-align: center;
+			    font-size: 12px;
+			    color: #7D7D7C;
+			}
+			#buttons {
+			    text-align: left;
+			    margin-top: -9px;
+			    margin-bottom: -25px;
+			    margin-left: 24px;
+			    font-size: 22px;
+			}
+			.add-note, .delete-note {
+				cursor: pointer;
+			}
+		</style>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/underscore-min.js"></script>
+		<script type="text/javascript" src="./js/popup.js">></script>
+	</head>
+	<body>
+		<div id="notes-list-container">
+			<input type="text" class="form-control" id="search-notes" placeholder="Search">
+			<div id="list-div"><ul id="notes-list"></ul></div>
+		</div>
+		<div id="active-note">
+			<div id="header">
+				<div id="buttons">
+					<i class="add-note fa fw fa-plus-square-o"></i>
+					<i class="delete-note fa fw fa-minus-square-o"></i>
+				</div>
+				<div id="header-time"></div>
+			</div>
+			<textarea id="edit-note" autofocus></textarea>
+		</div>
+	</body>
+</html> 

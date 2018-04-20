@@ -21,7 +21,8 @@
   "permissions": [
     "activeTab",
     "storage",
-    "http://api.forismatic.com/"
+    "http://api.forismatic.com/",
+    "https://ajax.googleapis.com/"
   ],
 
   "icons": { 
