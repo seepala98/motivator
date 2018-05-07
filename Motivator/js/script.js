@@ -1,3 +1,12 @@
+$(document).ready(function(){
+    $(".btn1").click(function(){
+        $("#quote").fadeOut()
+        $("#author").fadeOut()
+        changeQuote();
+        
+    });
+});
+
 var fetchNewQuoteLocal = function(callback) {
   $.getJSON('./assets/quotes.json', function(data) {
     var r = Math.round(Math.random()*(data.length-1));
@@ -56,3 +65,4 @@ document.getElementById("demo").innerHTML = minutes;
 }
 
 setInterval(myFunction,1000)
+
